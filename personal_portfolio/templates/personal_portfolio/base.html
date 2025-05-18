@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'projects' %}">Proyectos</a></li>
+                <li><a href="{% url 'contact' %}">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; {% now "Y" %} Mi Portfolio. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
